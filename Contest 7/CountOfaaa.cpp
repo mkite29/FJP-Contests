@@ -2,48 +2,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
-
-
 vector<string> ans;
 bool f = false;
 
-void solve(string s ,int idx,string osf){
-
-    //
-    if(idx >= s.size()){
-        return;
-    }
-
-    if(s[idx] == '('){
-        f = true;
-        osf +='(';
-        solve(s,idx+1,osf);
-        //f= false;
-    }
-
-
-    else if(s[idx] == ')'){
-        f = false;
-        osf += ')';
-        ans.push_back(osf);
-        osf.clear();
-        solve(s,idx+1,osf);
-        //return;
-    }
-    else{
-
-        if(f == true){
-            osf+=s[idx];
-            solve(s,idx+1,osf);    
-        }
-
-        else
-            solve(s,idx+1,osf);
-        
-    }
-
-}
 
 int total = 0;
 //string ans = "";
